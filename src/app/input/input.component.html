@@ -1,17 +1,20 @@
- <input [formControl]='control' [type]="inputType" [placeholder]="inputTitle" />
+ <div class="input-container">
+ <input [formControl]='control' [type]="inputType" [placeholder]="inputTitle"/>
  <ng-container *ngIf="displayErrors()">
-     <div *ngIf="control?.errors?.required">
+     <div class="error-container" *ngIf="control?.errors?.required">
          Input field is required 
      </div>
-     <div *ngIf="control?.errors?.pattern && inputTitle === 'phone number'">
+     <div class="error-container" *ngIf="control?.errors?.pattern && inputTitle === 'phone number'">
         the number needs to start with 0 and 8 digits following it
     </div>
-     <div *ngIf="control?.errors?.pattern && inputType ==='email'">
+     <div  class="error-container" *ngIf="control?.errors?.pattern && inputType ==='email'">
         your input format is wrong, it need to be xxxx@xxxx.xx
     </div>
-    <div *ngIf="control?.errors?.pattern && inputType ==='password'">
+    <div  class="error-container" *ngIf="control?.errors?.pattern && inputType ==='password'">
         your input format is wrong, you need to Input at least one capital letter and one number with min length of 6
     </div>
  </ng-container>
+</div>
+
 
 
