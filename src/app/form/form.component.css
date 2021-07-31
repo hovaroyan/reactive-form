@@ -1,10 +1,21 @@
-.form {
+.forms-container {
     display: flex;
     flex-direction: column;
+    padding: 20px 40px;
     align-items: center;
+}
+
+.form {
     background-image: linear-gradient(to right top, #0a1c38, #001f50, #002068, #001e7f, #0b1593);
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
+    width: 75%;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .button {

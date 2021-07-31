@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
 
   });
 
-  items = this.fb.array([ this.form]);
+  items= this.fb.array([ this.form]);
 
   constructor(private fb: FormBuilder) { 
   }
@@ -26,9 +26,21 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAdd() {
-  const item: FormGroup = this.items.controls[0] as FormGroup;
+handleDelete(i:number) {
+  this.items.removeAt(i)
+}
+
+handleAdd(i:number) {
+  const item: FormGroup = this.items.controls[i] as FormGroup;
   this.items.push(item); 
+
+  
+
+  console.log('item',item);
+ console.log(this.form);
+ console.log(this.items.controls);
+ 
+ 
   }
     
 }
