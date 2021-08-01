@@ -30,7 +30,9 @@ export class FormComponent implements OnInit {
   }
 
 handleDelete(i:number) {
-  this.items.removeAt(i)
+  if(i>0){
+    this.items.removeAt(i)
+  }
 }
 
 handleAdd() {

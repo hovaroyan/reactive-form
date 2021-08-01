@@ -8,7 +8,7 @@
       <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
       <div class="button-container">
          <button class="button"  (click)="handleAdd()">Add</button>
-         <button class="button" (click)="handleDelete(i)">Delete</button>
+         <button class="button" (click)="handleDelete(i)" [disabled]="i === 0" >Delete</button>
       </div>      
   
    </form>
