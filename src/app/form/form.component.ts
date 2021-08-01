@@ -61,7 +61,6 @@ this.items.push(newForm)
 } 
 
 handleSubmit() {
-  if(this.items)
   console.log(this.items.value);
   
 }
