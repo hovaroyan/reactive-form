@@ -57,7 +57,6 @@ const newForm= this.fb.group({
 });
 
 this.items.push(newForm)
-
 } 
 
 handleSubmit() {

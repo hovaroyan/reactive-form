@@ -11,7 +11,7 @@
             It does not match the password
          </div>
          <div class="button-container">
-            <app-button backgroundColor="#99C624" [disable]='false' text='Add' (click)="handleAdd()"></app-button>
+            <app-button backgroundColor="#99C624" [disable]='item.invalid' text='Add' (click)="handleAdd()"></app-button>
             <app-button backgroundColor="#DD380D" [disable]='i===0' text='Delete' (click)="handleDelete(i)"></app-button>
          </div>      
      
