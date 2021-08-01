@@ -32,8 +32,8 @@ export class FormComponent implements OnInit {
 
 
 confirmPasswordCheck() {
-  const password = this.items.controls[this.index].get('password')?.value;
-  const confirmPassword = this.items.controls[this.index].get('confirmPassword')?.value;
+  const password = this.items.controls[this.index]?.get('password')?.value;
+  const confirmPassword = this.items.controls[this.index]?.get('confirmPassword')?.value;
   return confirmPassword === password;
 }
 
