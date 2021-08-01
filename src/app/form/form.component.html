@@ -1,11 +1,11 @@
-<div class="forms-container" *ngFor="let item of items.controls; index as i">
-   <form id="i" class="form" [formGroup]="form" >       
-      <app-input [control]="$any(form).controls['name']" inputType="text" inputTitle="name"></app-input>
-      <app-input [control]="$any(form).controls['lastName']" inputType="text" inputTitle="last name"></app-input>
-      <app-input [control]="$any(form).controls['phoneNumber']" inputType="text" inputTitle="phone number"></app-input>
-      <app-input [control]="$any(form).controls['email']" inputType="email" inputTitle="email"></app-input>
-      <app-input [control]="$any(form).controls['password']" inputType="password" inputTitle="password"></app-input>
-      <app-input [control]="$any(form).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
+<div class="forms-container" *ngFor="let item of items.controls | slice:0:num ; index as i">
+   <form id="i" class="form" [formGroup]="$any(item)" >       
+      <app-input [control]="$any(item).controls['name']" inputType="text" inputTitle="name"></app-input>
+      <app-input [control]="$any(item).controls['lastName']" inputType="text" inputTitle="last name"></app-input>
+      <app-input [control]="$any(item).controls['phoneNumber']" inputType="text" inputTitle="phone number"></app-input>
+      <app-input [control]="$any(item).controls['email']" inputType="email" inputTitle="email"></app-input>
+      <app-input [control]="$any(item).controls['password']" inputType="password" inputTitle="password"></app-input>
+      <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
       <div class="button-container">
          <button class="button"  (click)="handleAdd(i)">Add</button>
          <button class="button" (click)="handleDelete(i)">Delete</button>

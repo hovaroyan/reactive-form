@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -18,9 +18,21 @@ export class FormComponent implements OnInit {
 
   });
 
-  items= this.fb.array([ this.form]);
+  num = 1;
+
+  items= this.fb.array([ this.fb.group({
+    name: this.fb.control('',[Validators.required]),
+    lastName: this.fb.control('',[Validators.required]),
+    phoneNumber: this.fb.control('',[Validators.required, Validators.pattern("0[0-9]{8}")]),
+    email: this.fb.control('',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z.-]+\\.[a-z]{2,4}$")]),
+    password: this.fb.control('',[Validators.required, Validators.pattern("^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$")]),
+    confirmPassword: this.fb.control('',[Validators.required]),
+
+  })]);
+  
 
   constructor(private fb: FormBuilder) { 
+
   }
 
   ngOnInit(): void {
@@ -31,14 +43,12 @@ handleDelete(i:number) {
 }
 
 handleAdd(i:number) {
-  const item: FormGroup = this.items.controls[i] as FormGroup;
-  this.items.push(item); 
+
 
   
+this.num +=1;
+this.items.push(this.form)
 
-  console.log('item',item);
- console.log(this.form);
- console.log(this.items.controls);
  
  
   }
