@@ -8,13 +8,13 @@
          <app-input [control]="$any(item).controls['password']" inputType="password" inputTitle="password"></app-input>
          <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
          <div class="button-container">
-            <button class="button" (click)="handleAdd()">Add</button>
-            <button class="button" (click)="handleDelete(i)" [disabled]="i === 0" >Delete</button>
+            <app-button backgroundColor="#99C624" [disable]='false' text='Add' (click)="handleAdd()"></app-button>
+            <app-button backgroundColor="#DD380D" [disable]='i===0' text='Delete' (click)="handleDelete(i)"></app-button>
          </div>      
      
       </form>
     </div>
-    <button class="button" (click)="handleSubmit()">Submit</button>
+    <app-button backgroundColor="#007EE3" [disable]='false' text='Submit' (click)="handleSubmit()"></app-button>
 
 </div>
 

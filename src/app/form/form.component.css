@@ -25,15 +25,3 @@
     display: flex;
     justify-content: space-around;
 }
-
-.button {
-   padding: 5px 0;
-   width: 150px;
-   text-align: center;
-   max-width: 100px;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   background-color: gray;
-   font-weight: bold;
-}
