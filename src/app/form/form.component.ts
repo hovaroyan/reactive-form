@@ -10,6 +10,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   counter = 1;
+  index: number = 0;
 
   items= this.fb.array([ this.fb.group({
     name: this.fb.control('',[Validators.required, Validators.minLength(5)]),
@@ -29,7 +30,15 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+confirmPasswordCheck() {
+  const password = this.items.controls[this.index].get('password')?.value;
+  const confirmPassword = this.items.controls[this.index].get('confirmPassword')?.value;
+  return confirmPassword === password;
+}
+
 handleDelete(i:number) {
+  this.index = i;
   if(i>0){
     this.items.removeAt(i)
   }
@@ -54,7 +63,6 @@ this.items.push(newForm)
 handleSubmit() {
   if(this.items)
   console.log(this.items.value);
-  
   
 }
 

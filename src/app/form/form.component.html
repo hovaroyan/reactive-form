@@ -7,6 +7,9 @@
          <app-input [control]="$any(item).controls['email']" inputType="email" inputTitle="email"></app-input>
          <app-input [control]="$any(item).controls['password']" inputType="password" inputTitle="password"></app-input>
          <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
+         <ng-container  *ngIf="$any(item).controls['confirmPassword'].value && !confirmPasswordCheck() ">
+            <p class="error-container">It does not match the password</p>
+         </ng-container>
          <div class="button-container">
             <app-button backgroundColor="#99C624" [disable]='false' text='Add' (click)="handleAdd()"></app-button>
             <app-button backgroundColor="#DD380D" [disable]='i===0' text='Delete' (click)="handleDelete(i)"></app-button>
@@ -14,7 +17,7 @@
      
       </form>
     </div>
-    <app-button backgroundColor="#007EE3" [disable]='false' text='Submit' (click)="handleSubmit()"></app-button>
+    <app-button backgroundColor="#007EE3" [disable]='(!confirmPasswordCheck() || items.invalid || items.length > 10)' text='Submit' (click)="handleSubmit()"></app-button>
 
 </div>
 
