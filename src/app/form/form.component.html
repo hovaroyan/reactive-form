@@ -1,16 +1,21 @@
-<div class="forms-container" *ngFor="let item of items.controls | slice:0:counter ; index as i">
-   <form id="i" class="form" [formGroup]="$any(item)" >       
-      <app-input [control]="$any(item).controls['name']" inputType="text" inputTitle="name"></app-input>
-      <app-input [control]="$any(item).controls['lastName']" inputType="text" inputTitle="last name"></app-input>
-      <app-input [control]="$any(item).controls['phoneNumber']" inputType="text" inputTitle="phone number"></app-input>
-      <app-input [control]="$any(item).controls['email']" inputType="email" inputTitle="email"></app-input>
-      <app-input [control]="$any(item).controls['password']" inputType="password" inputTitle="password"></app-input>
-      <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
-      <div class="button-container">
-         <button class="button"  (click)="handleAdd()">Add</button>
-         <button class="button" (click)="handleDelete(i)" [disabled]="i === 0" >Delete</button>
-      </div>      
-  
-   </form>
- </div>
+<div class="main">
+   <div class="forms-container" *ngFor="let item of items.controls | slice:0:counter ; index as i">
+      <form id="i" class="form" [formGroup]="$any(item)" >       
+         <app-input [control]="$any(item).controls['name']" inputType="text" inputTitle="name"></app-input>
+         <app-input [control]="$any(item).controls['lastName']" inputType="text" inputTitle="last name"></app-input>
+         <app-input [control]="$any(item).controls['phoneNumber']" inputType="text" inputTitle="phone number"></app-input>
+         <app-input [control]="$any(item).controls['email']" inputType="email" inputTitle="email"></app-input>
+         <app-input [control]="$any(item).controls['password']" inputType="password" inputTitle="password"></app-input>
+         <app-input [control]="$any(item).controls['confirmPassword']" inputType="password" inputTitle="confirm password"></app-input>
+         <div class="button-container">
+            <button class="button" (click)="handleAdd()">Add</button>
+            <button class="button" (click)="handleDelete(i)" [disabled]="i === 0" >Delete</button>
+         </div>      
+     
+      </form>
+    </div>
+    <button class="button" (click)="handleSubmit()">Submit</button>
+
+</div>
+
 

@@ -1,15 +1,23 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .forms-container {
     display: flex;
     flex-direction: column;
     padding: 20px 40px;
     align-items: center;
+    width: 75%;
 }
 
 .form {
-    background-image: linear-gradient(to right top, #0a1c38, #001f50, #002068, #001e7f, #0b1593);
+    background-image: linear-gradient(to right top, #397392, #4c84a0, #6095ae, #74a7bc, #88b9ca);
     border-radius: 5px;
     padding: 20px;
     width: 75%;
+    box-shadow: 0 8px 8px -4px #58aeca;
 }
 
 .button-container{
@@ -19,8 +27,13 @@
 }
 
 .button {
-   padding: 5px 40px;
+   padding: 5px 0;
+   width: 150px;
+   text-align: center;
+   max-width: 100px;
    border: none;
    border-radius: 5px;
    cursor: pointer;
+   background-color: gray;
+   font-weight: bold;
 }
